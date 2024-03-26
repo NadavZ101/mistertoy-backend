@@ -1,0 +1,54 @@
+[
+    {
+        "_id": "EfQ6A8",
+        "name": "Painting pages",
+        "price": "155",
+        "labels": [
+            "Art",
+            "Baby"
+        ],
+        "createdAt": 1711445254770
+    },
+    {
+        "_id": "Dm1nhY",
+        "name": "Truck",
+        "price": "80",
+        "labels": [
+            "Car",
+            "Battery Powered",
+            "On Wheels"
+        ],
+        "createdAt": 1711445254670
+    },
+    {
+        "_id": "1WnAUM",
+        "name": "Talking Doll",
+        "price": "125",
+        "labels": [
+            "Doll",
+            "Battery Powered",
+            "Baby"
+        ],
+        "createdAt": 1711545254970
+    },
+    {
+        "_id": "vrJj5i",
+        "name": "Puzzle",
+        "price": "125",
+        "labels": [
+            "Puzzle",
+            "Thinking"
+        ],
+        "createdAt": 1711465214770
+    },
+    {
+        "_id": "w3JP9S",
+        "name": "Lego",
+        "price": "270",
+        "labels": [
+            "Box game",
+            "Thinking"
+        ],
+        "createdAt": 1711465214773
+    }
+]

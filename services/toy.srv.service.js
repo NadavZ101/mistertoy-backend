@@ -36,7 +36,8 @@ function query(filterBy = {}) {
     }
 
     if (filterBy.sortBy) {
-        let dir = filterBy.isDesc ? -1 : 1
+        const isDesc = filterBy.isDesc === 'false'
+        let dir = isDesc ? -1 : 1
 
         if (filterBy.sortBy === 'name') {
             toysToReturn.sort((toy1, toy2) => dir * toy2.name.localeCompare(toy1.name))

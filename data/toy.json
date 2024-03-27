@@ -64,5 +64,13 @@
         "createdAt": 1711489782166,
         "_id": "9XeX0",
         "inStock": true
+    },
+    {
+        "name": "Chess",
+        "price": 111,
+        "labels": [],
+        "createdAt": 1711525729674,
+        "_id": "2A1vB",
+        "inStock": true
     }
 ]

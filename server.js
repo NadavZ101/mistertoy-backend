@@ -38,16 +38,21 @@ app.get('/api/toy', (req, res) => {
     //     maxPrice: +req.query.maxPrice || 0,
     // }
 
-    const filterBy = {
-        name: req.query.name || '',
-        inStock: req.query.inStock || undefined,
-        label: req.query.label || '',
-        isDesc: req.query.isDesc || 1,
-        sortBy: req.query.sortBy || '',
-    }
+    const filterBy = req.query
+    console.log("🚀 ~ app.get ~ filterBy:", filterBy)
+
+    // const filterBy = {
+    //     name: req.query.name || '',
+    //     inStock: req.query.inStock || undefined,
+    //     label: req.query.label || '',
+    //     isDesc: req.query.isDesc || 1,
+    //     sortBy: req.query.sortBy || '',
+    // }
 
     toySrvService.query(filterBy)
         .then((toys) => {
+            console.log("🚀 ~ .then ~ toys:", toys)
+
             res.send(toys)
         })
         .catch((err) => {
@@ -79,15 +84,15 @@ app.post('/api/toy', (req, res) => {
     // const toy = req.body
 
     const toy = {
-        name: req.body.name || 'Booloon',
-        price: +req.body.price || 200,
-        labels: req.body.labels || ['cute', 'pet'],
+        name: req.body.name,
+        price: +req.body.price,
+        labels: req.body.labels,
         createdAt: new Date().getTime()
     }
     console.log("🚀 ~ app.post ~ toy:", toy)
 
 
-    // carService.save(toy, loggedinUser)
+    // toySrvService.save(toy, loggedinUser)
     toySrvService.save(toy)
         .then((savedToy) => {
             res.send(savedToy)
@@ -111,6 +116,14 @@ app.put('/api/toy', (req, res) => {
     //     price: +req.body.price,
     // }
     // toySrvService.save(toy, loggedinUser)
+
+    const toy = {
+        _id: req.body._id,
+        name: req.body.name,
+        price: +req.body.price,
+        inStock: req.body.inStock
+    }
+
     toySrvService.save(toy)
         .then((savedToy) => {
             res.send(savedToy)

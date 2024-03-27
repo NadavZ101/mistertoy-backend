@@ -10,41 +10,48 @@ export const toySrvService = {
     save
 }
 
-const toys = utilService.readJsonFile('data/toy.json')
+let toys = utilService.readJsonFile('data/toy.json')
 
 function query(filterBy = {}) {
+    console.log("🚀 ~ query ~ filterBy:", filterBy)
+    console.log("🚀 ~in query toys:", toys)
+    let toysToReturn = [...toys]
+
     if (filterBy.name) {
         const regex = new RegExp(filterBy.name, 'i')
-        toys = toys.filter(toy => regex.test(toy.name))
+        toysToReturn = toysToReturn.filter(toy => regex.test(toy.name))
     }
 
-    if (filterBy.inStock !== undefined) {
-
-        const inStock = filterBy.inStock === true
-        toys = toys.filter(toy => toy.inStock === inStock)
+    if (filterBy.inStock === 'true' || filterBy.inStock === 'false') {
+        const inStock = filterBy.inStock === 'true'
+        toysToReturn = toysToReturn.filter(toy => toy.inStock === inStock)
     }
+    // if (filterBy.inStock !== undefined) {
+    //     const inStock = filterBy.inStock === true
+    //     toysToReturn = toysToReturn.filter(toy => toy.inStock === inStock)
+    // }
 
     if (filterBy.label) {
-        toys = toys.filter(toy => toy.labels.includes(filterBy.label))
+        toysToReturn = toysToReturn.filter(toy => toy.labels.includes(filterBy.label))
     }
 
     if (filterBy.sortBy) {
-        let dir
-        if (filterBy.isDesc) dir = 1
-        else dir = -1
+        let dir = filterBy.isDesc ? -1 : 1
 
         if (filterBy.sortBy === 'name') {
-            toys.sort((toy1, toy2) => dir * toy2.name.localCompare(toy1.name))
+            toysToReturn.sort((toy1, toy2) => dir * toy2.name.localeCompare(toy1.name))
         }
         if (filterBy.sortBy === 'price') {
-            toys.sort((toy1, toy2) => dir * (toy2.price - toy1.price))
+            toysToReturn.sort((toy1, toy2) => dir * (toy2.price - toy1.price))
         }
         if (filterBy.sortBy === 'createdAt') {
-            toys.sort((toy1, toy2) => dir * (toy2.createdAt - toy1.createdAt))
+            toysToReturn.sort((toy1, toy2) => dir * (new Date(toy2.createdAt) - new Date(toy1.createdAt)))
         }
 
     }
-    return Promise.resolve(toys)
+    console.log("🚀 ~ query ~ toysToReturn:", toysToReturn)
+
+    return Promise.resolve(toysToReturn)
 }
 
 function getById(toyId) {

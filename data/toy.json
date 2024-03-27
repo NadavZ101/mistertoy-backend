@@ -2,7 +2,8 @@
     {
         "_id": "EfQ6A8",
         "name": "Painting pages",
-        "price": "155",
+        "price": 155,
+        "inStock": true,
         "labels": [
             "Art",
             "Baby"
@@ -12,18 +13,25 @@
     {
         "_id": "Dm1nhY",
         "name": "Truck",
-        "price": "80",
+        "price": 75,
+        "inStock": true,
         "labels": [
             "Car",
             "Battery Powered",
             "On Wheels"
         ],
-        "createdAt": 1711445254670
+        "createdAt": 1711445254670,
+        "msgs": [
+            "Hello",
+            "hey!",
+            "how are you"
+        ]
     },
     {
         "_id": "vrJj5i",
         "name": "Puzzle",
-        "price": "125",
+        "price": 125,
+        "inStock": true,
         "labels": [
             "Puzzle",
             "Thinking"
@@ -38,7 +46,8 @@
     {
         "_id": "w3JP9S",
         "name": "Lego",
-        "price": "270",
+        "price": 270,
+        "inStock": true,
         "labels": [
             "Box game",
             "Thinking"

@@ -33,13 +33,7 @@ app.use(cors(corsOptions))
 // Toy LIST
 app.get('/api/toy', (req, res) => {
 
-    // const filterBy = {
-    //     txt: req.query.txt || '',
-    //     maxPrice: +req.query.maxPrice || 0,
-    // }
-
     const filterBy = req.query
-    console.log("🚀 ~ app.get ~ filterBy:", filterBy)
 
     // const filterBy = {
     //     name: req.query.name || '',
@@ -51,8 +45,6 @@ app.get('/api/toy', (req, res) => {
 
     toySrvService.query(filterBy)
         .then((toys) => {
-            console.log("🚀 ~ .then ~ toys:", toys)
-
             res.send(toys)
         })
         .catch((err) => {
@@ -95,6 +87,8 @@ app.post('/api/toy', (req, res) => {
     // toySrvService.save(toy, loggedinUser)
     toySrvService.save(toy)
         .then((savedToy) => {
+            console.log("🚀 ~ .then ~ savedToy:", savedToy)
+
             res.send(savedToy)
         })
         .catch((err) => {
@@ -121,6 +115,7 @@ app.put('/api/toy', (req, res) => {
         _id: req.body._id,
         name: req.body.name,
         price: +req.body.price,
+        labels: req.body.labels,
         inStock: req.body.inStock
     }
 

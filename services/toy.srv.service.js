@@ -13,8 +13,6 @@ export const toySrvService = {
 let toys = utilService.readJsonFile('data/toy.json')
 
 function query(filterBy = {}) {
-    console.log("🚀 ~ query ~ filterBy:", filterBy)
-    console.log("🚀 ~in query toys:", toys)
     let toysToReturn = [...toys]
 
     if (filterBy.name) {
@@ -50,7 +48,6 @@ function query(filterBy = {}) {
         }
 
     }
-    console.log("🚀 ~ query ~ toysToReturn:", toysToReturn)
 
     return Promise.resolve(toysToReturn)
 }
@@ -72,18 +69,20 @@ function remove(toyId) {
 
 // function save(toy, loggedinUser) {
 function save(toy) {
-    if (toy._id) {
-        const toyToUpdate = toys.find(currToy => currToy._id === toy._id)
+    console.log("🚀 ~ save ~ toy:", toy)
 
-        // if (!loggedinUser.isAdmin &&
-        //     carToUpdate.owner._id !== loggedinUser._id) {
-        //     return Promise.reject('Not your car')
-        // }
+    if (toy._id) {
+        console.log("🚀 ~ save - edit ~ toy:", toy)
+
+        const toyToUpdate = toys.find(currToy => currToy._id === toy._id)
 
         toyToUpdate.name = toy.name
         toyToUpdate.price = toy.price
         toyToUpdate.inStock = toy.inStock
+        toyToUpdate.labels = toy.labels
         toy = toyToUpdate
+        console.log("🚀 ~ save ~ toy:", toy)
+
 
     } else {
         toy._id = utilService.makeId()

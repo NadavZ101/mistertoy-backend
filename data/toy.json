@@ -16,8 +16,8 @@
         "price": 75,
         "inStock": true,
         "labels": [
-            "Art",
-            "Outdoor"
+            "Battery Powered",
+            "Box game"
         ],
         "createdAt": 1711445254670,
         "msgs": [
@@ -32,8 +32,8 @@
         "price": 125,
         "inStock": true,
         "labels": [
-            "Art",
-            "Baby"
+            "Thinking",
+            "Battery Powered"
         ],
         "createdAt": 1711465214770,
         "msgs": [
@@ -113,21 +113,11 @@
         "_id": "izUQ1",
         "inStock": true,
         "labels": [
+            "Baby",
+            "Doll",
             "Battery Powered",
             "Outdoor"
         ],
-        "msgs": [
-            "Hello",
-            "hey!",
-            "how are you"
-        ]
-    },
-    {
-        "name": "TESTTTT",
-        "price": 111,
-        "createdAt": 1711540654010,
-        "_id": "uhJke",
-        "inStock": true,
         "msgs": [
             "Hello",
             "hey!",

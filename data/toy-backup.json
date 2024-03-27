@@ -2,7 +2,8 @@
     {
         "_id": "EfQ6A8",
         "name": "Painting pages",
-        "price": "155",
+        "price": 155,
+        "inStock": true,
         "labels": [
             "Art",
             "Baby"
@@ -12,43 +13,115 @@
     {
         "_id": "Dm1nhY",
         "name": "Truck",
-        "price": "80",
+        "price": 75,
+        "inStock": true,
         "labels": [
-            "Car",
             "Battery Powered",
-            "On Wheels"
+            "Box game"
         ],
-        "createdAt": 1711445254670
-    },
-    {
-        "_id": "1WnAUM",
-        "name": "Talking Doll",
-        "price": "125",
-        "labels": [
-            "Doll",
-            "Battery Powered",
-            "Baby"
-        ],
-        "createdAt": 1711545254970
+        "createdAt": 1711445254670,
+        "msgs": [
+            "Hello",
+            "hey!",
+            "how are you"
+        ]
     },
     {
         "_id": "vrJj5i",
         "name": "Puzzle",
-        "price": "125",
+        "price": 125,
+        "inStock": true,
         "labels": [
-            "Puzzle",
-            "Thinking"
+            "Thinking",
+            "Battery Powered"
         ],
-        "createdAt": 1711465214770
+        "createdAt": 1711465214770,
+        "msgs": [
+            "Hello",
+            "hey!",
+            "how are you"
+        ]
     },
     {
         "_id": "w3JP9S",
         "name": "Lego",
-        "price": "270",
+        "price": 270,
+        "inStock": true,
+        "labels": [
+            "Outdoor",
+            "Baby"
+        ],
+        "createdAt": 1711465214773,
+        "msgs": [
+            "Hello",
+            "hey!",
+            "how are you"
+        ]
+    },
+    {
+        "name": "Booloon",
+        "price": 200,
+        "labels": [
+            "cute",
+            "pet"
+        ],
+        "createdAt": 1711489782166,
+        "_id": "9XeX0",
+        "inStock": true,
+        "msgs": [
+            "Hello",
+            "hey!",
+            "how are you"
+        ]
+    },
+    {
+        "name": "Chess board",
+        "price": 300,
+        "createdAt": 1711535957300,
+        "_id": "zUFur",
+        "inStock": true,
+        "labels": [
+            "Battery Powered",
+            "Outdoor"
+        ],
+        "msgs": [
+            "Hello",
+            "hey!",
+            "how are you"
+        ]
+    },
+    {
+        "name": "Yo-Yo",
+        "price": 999,
+        "createdAt": 1711538441452,
+        "_id": "zlFns",
+        "inStock": true,
         "labels": [
             "Box game",
-            "Thinking"
+            "On wheels"
         ],
-        "createdAt": 1711465214773
+        "msgs": [
+            "Hello",
+            "hey!",
+            "how are you"
+        ]
+    },
+    {
+        "name": "Red Ball",
+        "price": 777,
+        "createdAt": 1711540418270,
+        "_id": "izUQ1",
+        "inStock": true,
+        "labels": [
+            "Baby",
+            "Doll",
+            "Battery Powered",
+            "Outdoor"
+        ],
+        "msgs": [
+            "Hello",
+            "hey!",
+            "how are you"
+        ]
     }
 ]

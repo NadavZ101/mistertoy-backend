@@ -123,5 +123,13 @@
             "hey!",
             "how are you"
         ]
+    },
+    {
+        "name": "truck",
+        "price": 60,
+        "labels": [],
+        "createdAt": 1711557141012,
+        "_id": "etk6b",
+        "inStock": true
     }
 ]
